@@ -2,7 +2,24 @@
 
 ## [Unreleased](https://github.com/CosmWasm/wasmd/tree/HEAD)
 
-[Full Changelog](https://github.com/CosmWasm/wasmd/compare/v0.31.0...HEAD)
+[Full Changelog](https://github.com/CosmWasm/wasmd/compare/v0.32.0...HEAD)
+
+## [v0.32.0](https://github.com/CosmWasm/wasmd/tree/v0.31.0) (2023-0x-xx)
+
+[Full Changelog](https://github.com/CosmWasm/wasmd/compare/v0.31.0...v0.32.0)
+
+- Upgrade to Cosmos-SDK v0.45.15 including CometBFT [\#1284](https://github.com/CosmWasm/wasmd/pull/1284)
+- Let contract fully abort IBC receive in certain case [\#1220](https://github.com/CosmWasm/wasmd/issues/1220)
+
+### Notable changes:
+- New behaviour for Contracts returning errors on IBC packet receive. See our [article](TODO) for more details.  
+- The SDK v0.45.15 replaces Tendermint with CometBFT. This requires a `replace` statement in `go.mod`. 
+  Please read their [release notes](https://github.com/cosmos/cosmos-sdk/releases/tag/v0.45.15) carefully for details
+- The SDK v0.45.x line reached its end-of-life.
+- CometBFT includes some [breaking changes](https://github.com/cometbft/cometbft/blob/v0.34.27/CHANGELOG.md#breaking-changes) 
+ 
+### Migration notes:
+- This release does not include any state migrations but breaking changes that require a coordinated chain upgrade
 
 ## [v0.31.0](https://github.com/CosmWasm/wasmd/tree/v0.31.0) (2023-03-13)
 
