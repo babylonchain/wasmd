@@ -118,6 +118,8 @@ import (
 
 	// unnamed import of statik for swagger UI support
 	_ "github.com/cosmos/cosmos-sdk/client/docs/statik"
+
+	babylonwasm "github.com/babylonchain/wasmbinding"
 )
 
 const appName = "WasmApp"
@@ -510,6 +512,9 @@ func NewWasmApp(
 	if err != nil {
 		panic(fmt.Sprintf("error while reading wasm config: %s", err))
 	}
+
+	// Babylon modification: inject wasmbindings for Babylon
+	wasmOpts = append(wasmOpts, babylonwasm.RegisterCustomPlugins(&app.StakingKeeper)...)
 
 	// The last arguments can contain custom message handlers, and custom query handlers,
 	// if we want to allow any custom callbacks
