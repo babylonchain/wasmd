@@ -125,6 +125,8 @@ import (
 	wasmclient "github.com/CosmWasm/wasmd/x/wasm/client"
 	wasmkeeper "github.com/CosmWasm/wasmd/x/wasm/keeper"
 	wasmtypes "github.com/CosmWasm/wasmd/x/wasm/types"
+
+	babylonwasm "github.com/babylonchain/wasmbinding"
 )
 
 const appName = "WasmApp"
@@ -580,6 +582,9 @@ func NewWasmApp(
 	if err != nil {
 		panic(fmt.Sprintf("error while reading wasm config: %s", err))
 	}
+
+	// register Babylon wasm binding
+	wasmOpts = append(wasmOpts, babylonwasm.RegisterCustomPlugins(app.StakingKeeper)...)
 
 	// The last arguments can contain custom message handlers, and custom query handlers,
 	// if we want to allow any custom callbacks
