@@ -4,6 +4,7 @@ go 1.19
 
 require (
 	github.com/CosmWasm/wasmvm v1.2.1
+	github.com/babylonchain/wasmbinding v0.0.0-20230412071919-d3d699148da0
 	github.com/cosmos/cosmos-proto v1.0.0-beta.2
 	github.com/cosmos/cosmos-sdk v0.45.14
 	github.com/cosmos/gogoproto v1.4.6
@@ -45,7 +46,6 @@ require (
 	github.com/HdrHistogram/hdrhistogram-go v1.1.2 // indirect
 	github.com/Workiva/go-datastructures v1.0.53 // indirect
 	github.com/armon/go-metrics v0.4.0 // indirect
-	github.com/babylonchain/wasmbinding v0.0.0-20230412054628-92863f26c85f // indirect
 	github.com/beorn7/perks v1.0.1 // indirect
 	github.com/bgentry/speakeasy v0.1.1-0.20220910012023-760eaf8b6816 // indirect
 	github.com/btcsuite/btcd v0.22.2 // indirect
